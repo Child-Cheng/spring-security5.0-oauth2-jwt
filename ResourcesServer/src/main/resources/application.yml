@@ -1,0 +1,24 @@
+#服务器访问端口
+server:
+  port: 8085
+
+spring:
+  profiles:
+    active: dev
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+jwt:
+  tokenHeader: Authorization
+  secret: mySecret
+  #  是否设置token过期
+  expired: true
+  #  过期时间，毫秒
+  expiration: 600000
+  head: "Bearer "
+  #  不需要token认证和跳过security认证的URI,支持*通配符，必须以 / 开头
+  permitUris: "/api/Login,/oauth/**"
+
+
